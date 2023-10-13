@@ -1,0 +1,22 @@
+metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        ports:
+        - name: mongodbport
+          containerPort: 27017
+          protocol: TCP
+        env:
+        - name: mongodb
+          valueFrom:
+            secretKeyRef:
+              name: mongodb
+              key: mongo
+        - name: mongodb
+          valueFrom:
+            secretKeyRef:
+              name: mongodb
+              key: mongodb1234
